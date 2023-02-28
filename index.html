@@ -294,7 +294,11 @@
           getUploadURL(e);
           break;
         }
-        updatePosterImage();
+        try {
+          updatePosterImage();
+        } catch(e) {
+          console.error(e);
+        }
     }
 
     const getUploadURL = (e) => {
