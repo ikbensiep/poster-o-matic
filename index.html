@@ -282,13 +282,14 @@
     }
 
     const updatePosterImage = () => {
+      console.log(imgUrl);
       poster.style.backgroundImage = `url(${imgUrl})`;
     }
 
     const handleInputChange = (e) => {
       switch(e.target.type) {
         case 'text': 
-          url = e.target.value;
+          imgUrl = e.target.value;
         break;
         case 'file':
           getUploadURL(e);
@@ -306,7 +307,7 @@
       const reader = new FileReader();
       
       reader.addEventListener('load', () => {
-        url = reader.result;
+        imgUrl = reader.result;
         updatePosterImage();
       });
 
